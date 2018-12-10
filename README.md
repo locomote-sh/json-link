@@ -23,7 +23,7 @@ Link references can be absolute or relative; relative paths are resolved against
 
 Links can also reference a specific version of a file contained within a git repository history.
 This is done by appending `#` to the end of the file path, followed by a git commit-ish (e.g. a branch name or commit hash).
-For this to work, the file at the specified path has to be contained within a non-bare git repository (e.g. within a cloned copy of a repo).
+For this to work, the file at the specified path has to be contained within a non-bare git repository (e.g. within a cloned copy of a repo) and the `git` command has to be available on the path.
 
 Example:
 
