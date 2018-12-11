@@ -1,0 +1,8 @@
+{
+    "child": {
+        "version": "v2",
+        "sibling": {
+            "version": "v2"
+        }
+    }
+}

@@ -29,25 +29,25 @@ echo "Testing against bare repo"
 echo "  Testing v1..."
 export TEST_VERSION="v1"
 $HOME/../bin/json-link test-repo.git/main.json git > result1.json
-#diff result-v1.json result.json
+diff $HOME/result-v1.json result1.json
 # TODO report differences
 export TEST_VERSION="v2"
 echo "  Testing v2..."
 $HOME/../bin/json-link test-repo.git/main.json git > result2.json
-#diff result-v2.json result.json
+diff $HOME/result-v2.json result2.json
 # TODO report differences
 echo "Testing against cloned repo"
 echo "  Testing v1..."
 export TEST_VERSION="v1"
 $HOME/../bin/json-link test-repo/main.json git > result3.json
-#diff result-v1.json result.json
+diff $HOME/result-v1.json result3.json
 # TODO report differences
 export TEST_VERSION="v2"
 echo "  Testing v2..."
 $HOME/../bin/json-link test-repo/main.json git > result4.json
-#diff result-v2.json result.json
+diff $HOME/result-v2.json result4.json
 # TODO report differences
 
 # TODO Tidy up
-echo $TMPDIR
-#rm -Rf $TMPDIR
+#echo $TMPDIR
+rm -Rf $TMPDIR
