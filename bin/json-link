@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-const [ , , path ] = process.argv;
+const [ , , path, mode = 'file' ] = process.argv;
 const { loadJSON } = require('../lib/index');
 const { Source } = require('../lib/source');
 
 async function run() {
     try {
-        const source = await Source.parseSource( path, true );
+        const source = await Source.parseSource( path, mode == 'file' );
         const data = await loadJSON( source );
         const json = JSON.stringify( data, null, 4 );
         console.log( json );
@@ -16,5 +16,5 @@ async function run() {
     }
 }
 
-console.log('Loading %s...', path );
+console.error('Loading %s...', path );
 run();
