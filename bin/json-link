@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+const [ , , path ] = process.argv;
+const { loadJSON } = require('../lib/index');
+const { Source } = require('../lib/source');
+
+async function run() {
+    try {
+        const source = await Source.parseSource( path, true );
+        const data = await loadJSON( source );
+        const json = JSON.stringify( data, null, 4 );
+        console.log( json );
+    }
+    catch( e ) {
+        console.error( e );
+    }
+}
+
+console.log('Loading %s...', path );
+run();
